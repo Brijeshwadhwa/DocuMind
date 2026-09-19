@@ -16,6 +16,8 @@ class QuestionResponse(BaseModel):
     options: Optional[Dict[str, str]] = None
     answer: Optional[str] = None
     answer_confidence: Optional[float] = None
+    solution: Optional[str] = None
+    explanation: Optional[str] = None
     extraction_confidence: float
     status: str  # SUCCESS, REVIEW_REQUIRED, PARTIAL
     source_pages: List[int]
@@ -23,6 +25,16 @@ class QuestionResponse(BaseModel):
     metadata: Optional[Dict[str, Any]] = Field(default_factory=dict, validation_alias="metadata_info")
     created_at: datetime
     updated_at: datetime
+
+    @classmethod
+    def model_validate(cls, obj: Any, *args, **kwargs) -> "QuestionResponse":
+        instance = super().model_validate(obj, *args, **kwargs)
+        meta = instance.metadata or {}
+        if not instance.solution:
+            instance.solution = meta.get("solution") or meta.get("explanation")
+        if not instance.explanation:
+            instance.explanation = instance.solution
+        return instance
 
 
 class QuestionListResponse(BaseModel):

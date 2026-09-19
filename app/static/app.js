@@ -59,16 +59,28 @@ async function quickLogin() {
   authUserLabel.textContent = "Authenticating...";
 
   try {
-    // Try register
+    // Try login first
+    const res = await fetch("/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password })
+    });
+    if (res.ok) {
+      const data = await res.json();
+      currentToken = data.access_token;
+      localStorage.setItem("token", currentToken);
+      setAuthenticated(email);
+      return;
+    }
+  } catch (e) {}
+
+  // If login failed, register then login
+  try {
     await fetch("/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password })
     });
-  } catch (e) {}
-
-  try {
-    // Login
     const res = await fetch("/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -307,6 +319,20 @@ function renderQuestions(questions) {
       `</div>`;
     }
 
+    const solution = q.solution || (q.metadata && q.metadata.solution) || (q.metadata && q.metadata.explanation) || "";
+    let solutionHtml = "";
+    if (solution) {
+      solutionHtml = `
+        <div class="solution-card" id="sol_${q.id}">
+          <div class="solution-header">
+            <span style="font-size: 1rem;">💡</span>
+            <span class="solution-title">Solution & Detailed Rationale:</span>
+          </div>
+          <div class="solution-body">${solution}</div>
+        </div>
+      `;
+    }
+
     return `
       <article class="question-card">
         <div class="question-meta-row">
@@ -326,10 +352,15 @@ function renderQuestions(questions) {
 
         <div class="question-footer-row">
           <div>
-            ${q.answer ? `<span style="color: var(--accent-emerald); font-weight: 600;">✓ Correct Answer: Option ${q.answer}</span> <span style="font-size: 0.72rem; color: var(--text-dim);">(${Math.round((q.answer_confidence || 0.95) * 100)}% Match)</span>` : `<span style="color: var(--text-dim);">Answer Unmatched</span>`}
+            ${q.answer ? `<span style="color: var(--accent-emerald); font-weight: 700;">✓ Correct Answer: Option ${q.answer}</span> <span style="font-size: 0.72rem; color: var(--text-dim);">(${Math.round((q.answer_confidence || 0.95) * 100)}% Match)</span>` : `<span style="color: var(--text-dim);">Answer Unmatched</span>`}
           </div>
-          <button class="btn btn-secondary btn-sm" onclick="toggleTrace('trace_${q.id}')">View Source Text</button>
+          <div style="display: flex; gap: 0.5rem;">
+            ${solution ? `<button class="btn btn-secondary btn-sm" onclick="toggleTrace('sol_${q.id}')">💡 Solution</button>` : ''}
+            <button class="btn btn-secondary btn-sm" onclick="toggleTrace('trace_${q.id}')">📄 Source Text</button>
+          </div>
         </div>
+
+        ${solutionHtml}
 
         <div id="trace_${q.id}" class="trace-box">
 ${q.source_text || "No raw text recorded"}

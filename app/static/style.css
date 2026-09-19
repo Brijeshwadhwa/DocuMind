@@ -785,3 +785,41 @@ body {
   white-space: pre-wrap;
   color: var(--text-main);
 }
+
+/* Solution Box */
+.solution-card {
+  margin-top: 0.85rem;
+  padding: 0.85rem 1.15rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  box-shadow: 0 1px 2px rgba(16, 185, 129, 0.05);
+  transition: all var(--transition-fast);
+}
+[data-theme="dark"] .solution-card {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.25);
+}
+.solution-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.3rem;
+}
+.solution-title {
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: #15803d;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+[data-theme="dark"] .solution-title {
+  color: #34d399;
+}
+.solution-body {
+  font-size: 0.84rem;
+  color: var(--text-main);
+}
+
