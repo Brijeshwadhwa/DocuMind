@@ -1,0 +1,1 @@
+This is an unformatted plain text document that should be rejected by the upload validator.

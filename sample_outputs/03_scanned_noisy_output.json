@@ -1,0 +1,85 @@
+{
+  "document_id": "bda20343-19eb-40b0-a268-422bebca39c4",
+  "filename": "03_scanned_noisy_exam.pdf",
+  "content_type": "application/pdf",
+  "status": "COMPLETED",
+  "total_questions": 2,
+  "questions": [
+    {
+      "id": "24d9434e-b54a-403c-8c8d-63c840d6f39d",
+      "source_document_id": "bda20343-19eb-40b0-a268-422bebca39c4",
+      "question_number": "1",
+      "question_text": "What is the derivative of sin(x) with respect to x?",
+      "question_type": "MCQ",
+      "options": {
+        "A": "-cos(x)",
+        "B": "cos(x)",
+        "C": "tan(x)",
+        "D": "sec(x)"
+      },
+      "answer": "B",
+      "answer_confidence": 0.96,
+      "extraction_confidence": 1.0,
+      "status": "SUCCESS",
+      "source_pages": [
+        1
+      ],
+      "source_text": "1. What is the derivative of sin(x) with respect to x?\nA. -cos(x)    B. cos(x)    C. tan(x)    D. sec(x)",
+      "metadata_info": {
+        "option_count": 4,
+        "is_multipage": false,
+        "character_length": 51
+      },
+      "created_at": "2026-09-19 13:55:53.141687",
+      "updated_at": "2026-09-19 13:55:53.141690"
+    },
+    {
+      "id": "9120b764-cff7-43e4-9859-67760c29566a",
+      "source_document_id": "bda20343-19eb-40b0-a268-422bebca39c4",
+      "question_number": "2",
+      "question_text": "Solve for x: 2x + 4 = 10.",
+      "question_type": "MCQ",
+      "options": {
+        "A": "3"
+      },
+      "answer": null,
+      "answer_confidence": 0.35,
+      "extraction_confidence": 0.75,
+      "status": "PARTIAL",
+      "source_pages": [
+        1
+      ],
+      "source_text": "2. Solve for x: 2x + 4 = 10.\nA. 3",
+      "metadata_info": {
+        "option_count": 1,
+        "is_multipage": false,
+        "character_length": 25
+      },
+      "created_at": "2026-09-19 13:55:53.142963",
+      "updated_at": "2026-09-19 13:55:53.142967"
+    }
+  ],
+  "total_review_items": 2,
+  "review_items": [
+    {
+      "id": "5fd6490a-584a-47ec-bed0-4d81f68a8144",
+      "document_id": "bda20343-19eb-40b0-a268-422bebca39c4",
+      "question_id": "9120b764-cff7-43e4-9859-67760c29566a",
+      "issue_type": "MALFORMED_OPTIONS",
+      "message": "Question has only 1 option (options B, C, D missing or unparsed)",
+      "confidence": 0.4,
+      "status": "OPEN",
+      "created_at": "2026-09-19 13:55:53.145381"
+    },
+    {
+      "id": "ea5ef766-9dec-42f0-89d9-dc78b19b6912",
+      "document_id": "bda20343-19eb-40b0-a268-422bebca39c4",
+      "question_id": "9120b764-cff7-43e4-9859-67760c29566a",
+      "issue_type": "LOW_CONFIDENCE_ANSWER",
+      "message": "Answer key entry 'Z' does not match available options (A) for Question 2",
+      "confidence": 0.35,
+      "status": "OPEN",
+      "created_at": "2026-09-19 13:55:53.145389"
+    }
+  ]
+}

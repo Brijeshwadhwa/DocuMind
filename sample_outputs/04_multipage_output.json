@@ -1,0 +1,107 @@
+{
+  "document_id": "089f0386-5aaf-4bdf-9361-10e9c4bdffd1",
+  "filename": "04_multipage_continuation.pdf",
+  "content_type": "application/pdf",
+  "status": "COMPLETED",
+  "total_questions": 3,
+  "questions": [
+    {
+      "id": "ef42ec5b-c8bb-4480-889c-3158e92de44d",
+      "source_document_id": "089f0386-5aaf-4bdf-9361-10e9c4bdffd1",
+      "question_number": "1",
+      "question_text": "In which year did the Apollo 11 mission land on the Moon?",
+      "question_type": "MCQ",
+      "options": {
+        "A": "1965",
+        "B": "1969",
+        "C": "1972",
+        "D": "1975"
+      },
+      "answer": "B",
+      "answer_confidence": 0.96,
+      "extraction_confidence": 1.0,
+      "status": "SUCCESS",
+      "source_pages": [
+        1
+      ],
+      "source_text": "1. In which year did the Apollo 11 mission land on the Moon?\nA. 1965    B. 1969    C. 1972    D. 1975",
+      "metadata_info": {
+        "option_count": 4,
+        "is_multipage": false,
+        "character_length": 57
+      },
+      "created_at": "2026-09-19 13:55:53.199166",
+      "updated_at": "2026-09-19 13:55:53.199170"
+    },
+    {
+      "id": "fa1b4ba8-5f2e-4d82-905d-1ca6bc9d660a",
+      "source_document_id": "089f0386-5aaf-4bdf-9361-10e9c4bdffd1",
+      "question_number": "2",
+      "question_text": "Which treaty signed in 1919 brought World War I to an official end, imposing significant reparations on Germany and establishing the League of Nations?",
+      "question_type": "MCQ",
+      "options": {
+        "A": "Treaty of Paris",
+        "B": "Treaty of Versailles",
+        "C": "Treaty of Utrecht",
+        "D": "Treaty of Ghent"
+      },
+      "answer": "B",
+      "answer_confidence": 0.96,
+      "extraction_confidence": 1.0,
+      "status": "SUCCESS",
+      "source_pages": [
+        1,
+        2
+      ],
+      "source_text": "2. Which treaty signed in 1919 brought World War I to an official end,\nimposing significant reparations on Germany and establishing the League of Nations?\nA. Treaty of Paris\nB. Treaty of Versailles\nC. Treaty of Utrecht\nD. Treaty of Ghent",
+      "metadata_info": {
+        "option_count": 4,
+        "is_multipage": true,
+        "character_length": 151
+      },
+      "created_at": "2026-09-19 13:55:53.200505",
+      "updated_at": "2026-09-19 13:55:53.200507"
+    },
+    {
+      "id": "3c5a1946-02ce-4572-961d-b81c35b46232",
+      "source_document_id": "089f0386-5aaf-4bdf-9361-10e9c4bdffd1",
+      "question_number": "3",
+      "question_text": "Who was the first President of the United States?",
+      "question_type": "MCQ",
+      "options": {
+        "A": "Thomas Jefferson",
+        "B": "Abraham Lincoln",
+        "C": "George Washington",
+        "D": "John Adams"
+      },
+      "answer": "C",
+      "answer_confidence": 0.96,
+      "extraction_confidence": 1.0,
+      "status": "SUCCESS",
+      "source_pages": [
+        2
+      ],
+      "source_text": "3. Who was the first President of the United States?\nA. Thomas Jefferson    B. Abraham Lincoln    C. George Washington    D. John Adams",
+      "metadata_info": {
+        "option_count": 4,
+        "is_multipage": false,
+        "character_length": 49
+      },
+      "created_at": "2026-09-19 13:55:53.200994",
+      "updated_at": "2026-09-19 13:55:53.200996"
+    }
+  ],
+  "total_review_items": 1,
+  "review_items": [
+    {
+      "id": "3f8500eb-eff7-4007-a5a8-766a7965c206",
+      "document_id": "089f0386-5aaf-4bdf-9361-10e9c4bdffd1",
+      "question_id": "fa1b4ba8-5f2e-4d82-905d-1ca6bc9d660a",
+      "issue_type": "MULTI_PAGE_SPAN",
+      "message": "Question spans across multiple pages: [1, 2]",
+      "confidence": 0.85,
+      "status": "OPEN",
+      "created_at": "2026-09-19 13:55:53.201748"
+    }
+  ]
+}

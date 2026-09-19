@@ -1,0 +1,67 @@
+{
+  "document_id": "0dbb18dd-d507-4832-b826-ffb168a1a8bc",
+  "filename": "05a_question_paper_only.pdf",
+  "content_type": "application/pdf",
+  "status": "COMPLETED",
+  "total_questions": 2,
+  "questions": [
+    {
+      "id": "2ffa6a0a-56dc-47b1-b5bf-a1597fed748e",
+      "source_document_id": "0dbb18dd-d507-4832-b826-ffb168a1a8bc",
+      "question_number": "1",
+      "question_text": "What is the SI unit of electrical resistance?",
+      "question_type": "MCQ",
+      "options": {
+        "A": "Volt",
+        "B": "Ampere",
+        "C": "Ohm",
+        "D": "Watt"
+      },
+      "answer": "C",
+      "answer_confidence": 0.96,
+      "extraction_confidence": 1.0,
+      "status": "SUCCESS",
+      "source_pages": [
+        1
+      ],
+      "source_text": "1. What is the SI unit of electrical resistance?\nA. Volt    B. Ampere    C. Ohm    D. Watt",
+      "metadata_info": {
+        "option_count": 4,
+        "is_multipage": false,
+        "character_length": 45
+      },
+      "created_at": "2026-09-19 13:55:53.401257",
+      "updated_at": "2026-09-19 13:55:53.401261"
+    },
+    {
+      "id": "10d5d328-1dc6-414c-ab88-b8d8ad408410",
+      "source_document_id": "0dbb18dd-d507-4832-b826-ffb168a1a8bc",
+      "question_number": "2",
+      "question_text": "Which law states that for every action, there is an equal and opposite reaction?",
+      "question_type": "MCQ",
+      "options": {
+        "A": "Newton's First Law",
+        "B": "Newton's Second Law",
+        "C": "Newton's Third Law",
+        "D": "Law of Gravitation"
+      },
+      "answer": "C",
+      "answer_confidence": 0.96,
+      "extraction_confidence": 1.0,
+      "status": "SUCCESS",
+      "source_pages": [
+        1
+      ],
+      "source_text": "2. Which law states that for every action, there is an equal and opposite reaction?\nA. Newton's First Law    B. Newton's Second Law    C. Newton's Third Law    D. Law of Gravitation",
+      "metadata_info": {
+        "option_count": 4,
+        "is_multipage": false,
+        "character_length": 80
+      },
+      "created_at": "2026-09-19 13:55:53.403200",
+      "updated_at": "2026-09-19 13:55:53.403204"
+    }
+  ],
+  "total_review_items": 0,
+  "review_items": []
+}

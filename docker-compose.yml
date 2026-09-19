@@ -1,0 +1,100 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: pbnc_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: document_intelligence
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d document_intelligence"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: pbnc_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pbnc_api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_NAME=DocuMind
+      - APP_ENV=production
+      - DEBUG=False
+      - API_V1_PREFIX=/api/v1
+      - DATABASE_URL=postgresql+psycopg2://postgres:postgres@postgres:5432/document_intelligence
+      - REDIS_URL=redis://redis:6379/0
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+      - CELERY_TASK_ALWAYS_EAGER=False
+      - SECRET_KEY=production_secure_secret_key_antigravity_round2_evaluation_2026!
+      - UPLOAD_DIR=/app/storage/uploads
+      - MAX_FILE_SIZE_MB=15
+      - TESSERACT_CMD=tesseract
+      - OCR_FALLBACK_ENABLED=True
+    volumes:
+      - uploads_data:/app/storage/uploads
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: >
+      sh -c "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000"
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pbnc_worker
+    restart: unless-stopped
+    environment:
+      - APP_NAME=DocuMind Worker
+      - APP_ENV=production
+      - DEBUG=False
+      - DATABASE_URL=postgresql+psycopg2://postgres:postgres@postgres:5432/document_intelligence
+      - REDIS_URL=redis://redis:6379/0
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+      - CELERY_TASK_ALWAYS_EAGER=False
+      - SECRET_KEY=production_secure_secret_key_antigravity_round2_evaluation_2026!
+      - UPLOAD_DIR=/app/storage/uploads
+      - MAX_FILE_SIZE_MB=15
+      - TESSERACT_CMD=tesseract
+      - OCR_FALLBACK_ENABLED=True
+    volumes:
+      - uploads_data:/app/storage/uploads
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: >
+      celery -A app.core.celery_app.celery_app worker --loglevel=info --concurrency=2
+
+volumes:
+  postgres_data:
+  redis_data:
+  uploads_data:

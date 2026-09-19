@@ -1,0 +1,123 @@
+{
+  "document_id": "86622b8c-b592-47be-b450-9d75e6b16fd1",
+  "filename": "01_clean_digital_exam.pdf",
+  "content_type": "application/pdf",
+  "status": "COMPLETED",
+  "total_questions": 4,
+  "questions": [
+    {
+      "id": "dce4de39-ba81-42e8-a285-01c094ef8b68",
+      "source_document_id": "86622b8c-b592-47be-b450-9d75e6b16fd1",
+      "question_number": "1",
+      "question_text": "What is the chemical symbol for Gold?",
+      "question_type": "MCQ",
+      "options": {
+        "A": "Ag",
+        "B": "Au",
+        "C": "Fe",
+        "D": "Pb"
+      },
+      "answer": "B",
+      "answer_confidence": 0.96,
+      "extraction_confidence": 1.0,
+      "status": "SUCCESS",
+      "source_pages": [
+        1
+      ],
+      "source_text": "1. What is the chemical symbol for Gold?\n(A) Ag    (B) Au\n(C) Fe    (D) Pb",
+      "metadata_info": {
+        "option_count": 4,
+        "is_multipage": false,
+        "character_length": 37
+      },
+      "created_at": "2026-09-19 13:55:52.966862",
+      "updated_at": "2026-09-19 13:55:52.966865"
+    },
+    {
+      "id": "d0b46d55-d2c6-4e27-b8ba-29274cdd07c3",
+      "source_document_id": "86622b8c-b592-47be-b450-9d75e6b16fd1",
+      "question_number": "2",
+      "question_text": "Which planet is known as the Red Planet?",
+      "question_type": "MCQ",
+      "options": {
+        "A": "Venus",
+        "B": "Mars",
+        "C": "Jupiter",
+        "D": "Saturn"
+      },
+      "answer": "B",
+      "answer_confidence": 0.96,
+      "extraction_confidence": 1.0,
+      "status": "SUCCESS",
+      "source_pages": [
+        1
+      ],
+      "source_text": "2. Which planet is known as the Red Planet?\n(A) Venus    (B) Mars\n(C) Jupiter    (D) Saturn",
+      "metadata_info": {
+        "option_count": 4,
+        "is_multipage": false,
+        "character_length": 40
+      },
+      "created_at": "2026-09-19 13:55:52.968935",
+      "updated_at": "2026-09-19 13:55:52.968939"
+    },
+    {
+      "id": "88c9410f-39dd-4f34-9261-8664a99719ee",
+      "source_document_id": "86622b8c-b592-47be-b450-9d75e6b16fd1",
+      "question_number": "3",
+      "question_text": "What is the primary gas found in Earth's atmosphere?",
+      "question_type": "MCQ",
+      "options": {
+        "A": "Oxygen",
+        "B": "Carbon Dioxide",
+        "C": "Nitrogen",
+        "D": "Hydrogen"
+      },
+      "answer": "C",
+      "answer_confidence": 0.96,
+      "extraction_confidence": 1.0,
+      "status": "SUCCESS",
+      "source_pages": [
+        1
+      ],
+      "source_text": "3. What is the primary gas found in Earth's atmosphere?\n(A) Oxygen    (B) Carbon Dioxide\n(C) Nitrogen    (D) Hydrogen",
+      "metadata_info": {
+        "option_count": 4,
+        "is_multipage": false,
+        "character_length": 52
+      },
+      "created_at": "2026-09-19 13:55:52.969315",
+      "updated_at": "2026-09-19 13:55:52.969317"
+    },
+    {
+      "id": "60556bda-f249-49d8-b2aa-d2346474bc27",
+      "source_document_id": "86622b8c-b592-47be-b450-9d75e6b16fd1",
+      "question_number": "4",
+      "question_text": "What is the speed of light in a vacuum approximately?",
+      "question_type": "MCQ",
+      "options": {
+        "A": "300,000 km/s",
+        "B": "150,000 km/s",
+        "C": "450,000 km/s",
+        "D": "100,000 km/s"
+      },
+      "answer": "A",
+      "answer_confidence": 0.96,
+      "extraction_confidence": 1.0,
+      "status": "SUCCESS",
+      "source_pages": [
+        1
+      ],
+      "source_text": "4. What is the speed of light in a vacuum approximately?\n(A) 300,000 km/s    (B) 150,000 km/s\n(C) 450,000 km/s    (D) 100,000 km/s",
+      "metadata_info": {
+        "option_count": 4,
+        "is_multipage": false,
+        "character_length": 53
+      },
+      "created_at": "2026-09-19 13:55:52.969627",
+      "updated_at": "2026-09-19 13:55:52.969628"
+    }
+  ],
+  "total_review_items": 0,
+  "review_items": []
+}
